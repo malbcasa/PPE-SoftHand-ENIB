@@ -2,9 +2,12 @@
 
 This repository contains the scripts made by students doing their student professional project. It contains the necessary ROS packages for communicate and control a qbrobotics&reg; Soft Hand device, and the control scripts made by the students.
 
-[TOC]
 
-#### Attention
+- [Attention](#attention)
+- [Installing Modules](#installing-modules)
+- [Using the Script](#using-the-scripts)
+
+#### Attention 
 This README only intents to guide with the essential to install the ROS packages. Further detailed explanation can be found in the official site ([ROS](https://wiki.ros.org/ "ROS")).
 
 All of this files have been tested and used in Ubuntu 20.04 with the Noetic version of ROS. There is no guarantee that any of this will work in versions other than the mentioned above.
