@@ -6,3 +6,7 @@
 	path = qbhand-ros
 	url = https://bitbucket.org/qbrobotics/qbhand-ros.git
 	branch = production-noetic
+[submodule "ros_controllers"]
+	path = ros_controllers
+	url = https://github.com/ros-controls/ros_controllers
+	branch = noetic-devel
