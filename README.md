@@ -2,10 +2,24 @@
 
 This repository contains the scripts made by students doing their student professional project. It contains the necessary ROS packages for communicate and control a qbrobotics&reg; Soft Hand device, and the control scripts made by the students.
 
-
+- [Cloning this repository](#cloning-this-repository)
 - [Attention](#attention)
 - [Installing Modules](#installing-modules)
 - [Using the Script](#using-the-scripts)
+
+#### Cloning this repository
+This repository uses QB Soft Hand repositories as submodules. In order to correctly clone this repository and include the submodules, is necessary to proceed in one of the following ways:
+
+- Clone with extra option  
+	```
+	git clone --recurse-submodules link-to-this-repo
+	```
+- Adding submodules after cloning  
+	```
+	git clone link-to-this-repo
+	cd PPE-SoftHand-ENIB
+	git submodule update --init --recursive
+	```
 
 #### Attention 
 This README only intents to guide with the essential to install the ROS packages. Further detailed explanation can be found in the official site ([ROS](https://wiki.ros.org/ "ROS")).
