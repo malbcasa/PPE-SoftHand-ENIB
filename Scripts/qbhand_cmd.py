@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 # license removed for brevity
 
+import rospy
+import subprocess
+import os, sys
+from cmd import Cmd
+from handController import HandController
+import psutil
+
 #defining tags for the motor state
 ACTIVATED = 1
 DEACTIVATED = 0
-
-import rospy
-import subprocess
-import os, signal, sys
-from cmd import Cmd
-from handController import HandController
-import time
-import psutil
 
 class Qbhand_cmd(Cmd):
 
@@ -21,7 +20,7 @@ class Qbhand_cmd(Cmd):
         self.node = HandController()
         self.motorState = DEACTIVATED
         os.system('clear')
-        self.intro = "Qb Robotics Soft Hand Research cmd réalisé par les étudiants de l'ENIB\n"
+        self.intro = "Qb Robotics Soft Hand Research CLI réalisé par les étudiants de l'ENIB\n"
         self.intro += "Type help or ? to list commands.\n"
         self.prompt = ">> "
         self.default_velocity = 1.0
@@ -154,10 +153,10 @@ class Qbhand_cmd(Cmd):
         except:
             pass
         sys.exit("Cmd program finished.")
-
+    
 if __name__ == '__main__':
     try:
-        launch = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c',"roslaunch qb_hand_control control_qbhand.launch standalone:=true activate_on_initialization:=false device_id:=1 use_rviz:=true"])
+        launch = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c',"roslaunch qb_hand_control control_qbhand.launch standalone:=true activate_on_initialization:=false device_id:=1 use_rviz:=true use_controller_gui:=true"])
         Qbhand_cmd().cmdloop()
     except rospy.ROSInterruptException:
         pass
